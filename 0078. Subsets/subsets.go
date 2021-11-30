@@ -1,6 +1,6 @@
 package main
 
-// 依次遍历在前一次的基础上 append nums[i]
+// 依次遍历在前一次的基础上 append nums[i] 进行迭代
 // [] => [1] => [2],[1 2] => [3],[1 3],[2 3],[1 2 3]
 func subsets(nums []int) [][]int {
 	res := make([][]int, 1) // 注意 length 此时 res 为 [[]]
