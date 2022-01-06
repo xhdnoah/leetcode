@@ -40,9 +40,56 @@ func reorderList(head *ListNode) *ListNode {
 	for p1 != preMiddle {
 		preMiddle.Next = p2.Next // 3->5
 		p2.Next = p1.Next        // 6->2
-		p1.Next = p2             // 1->6->2->3->5->4
+		p1.Next = p2             // 1->6(->2->3->5->4)
 		p1 = p2.Next             // 2
 		p2 = preMiddle.Next      // 5
 	}
 	return head
+}
+
+func reorderList_composition(head *ListNode) {
+	if head == nil {
+		return
+	}
+	mid := middleNode(head)
+	l1 := head
+	l2 := mid.Next
+	mid.Next = nil
+	l2 = reverseList(l2)
+	mergeList(l1, l2)
+}
+
+func middleNode(head *ListNode) *ListNode {
+	slow, fast := head, head
+	for fast.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return slow
+}
+
+func reverseList(head *ListNode) *ListNode {
+	var prev, cur *ListNode = nil, head
+	for cur != nil {
+		next := cur.Next
+		cur.Next = prev
+		prev = cur
+		cur = next
+	}
+	return prev
+}
+
+// 1->2, 3->4 => 1->3->2->4
+func mergeList(l1, l2 *ListNode) {
+	var next1, next2 *ListNode
+	for l1 != nil && l2 != nil {
+		next1 = l1.Next
+		next2 = l2.Next
+
+		l1.Next = l2
+		l1 = next1
+
+		l2.Next = l1
+		l2 = next2
+	}
 }

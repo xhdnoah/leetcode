@@ -30,7 +30,7 @@ func backtrack(nums []int, start int, track []int, res *[][]int) {
 	for i := start; i < len(nums); i++ {
 		track = append(track, nums[i]) // 做选择
 		backtrack(nums, i+1, track, res)
-		track = track[:len(track)-1]
+		track = track[:len(track)-1] // 撤销选择
 	}
 }
 

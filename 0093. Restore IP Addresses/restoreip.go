@@ -1,9 +1,9 @@
 package main
 
 // Input: "25525511135" Output: ["255.255.11.135", "255.255.111.35"]
-// DFS 深度搜索；IP 规则：0 开头和超过 255 的数字都是非法的
+// DFS 深度搜索 + 搜索过程中回溯；IP 规则：0 开头和超过 255 的数字都是非法的 ".0."是合法的
 func restoreIPAddress(s string) (res []string) {
-	// k: 分隔符 . 的个数; i: 遍历 s 的索引; val: IP 段的值; prev: 之前构造的 IP 地址（部分
+	// k: 分隔符'.'的个数; i: 遍历 s 的索引（搜索深度）; val: IP 段的值; prev: 已构造出的 IP 地址（当前树的形状
 	var construct func(k, i, val int, prev []byte)
 	construct = func(k, i, val int, prev []byte) {
 		// 单个 IP 段增长或 IP 段数目超过上限则退出递归
@@ -17,13 +17,14 @@ func restoreIPAddress(s string) (res []string) {
 			return
 		}
 
-		val = int(s[i]-'0') + val*10            // s[i] 为 byte(uint8) 类型，值为 ‘x’ 的 ascii 码，通过与 ‘0’ 字节的差值得出真实的字符串中的数字
-		prev = append(prev, s[i])               // 第一个递归向 . 后新增数字，第二个递归向当前 IP 地址最后新增
-		if i+1 < len(s) && val < 256 && k < 3 { // 一开始先尽可能新增 IP 片段 2.5.5.2
-			construct(k+1, i+1, 0, append(prev, '.'))
+		val = int(s[i]-'0') + val*10 // s[i] 为 byte(uint8) 类型，值为 ‘x’ 的 ascii 码，通过与 ‘0’ 字节的差值得出真实的字符串中的数字
+		prev = append(prev, s[i])    // append 结果赋值给原变量可避免切片拷贝耗费时间(newPrev := append...
+		// 第一个递归向后新增 IP 片段，第二个递归增长当前 IP 片段
+		if i+1 < len(s) && val < 256 && k < 3 { // 新增 IP 片段的条件
+			construct(k+1, i+1, 0, append(prev, '.')) // 回溯中的做选择: 一开始先尽可能新增 IP 片段 2.5.5.2 符合 DFS 原则
 		}
-		if val != 0 || i == len(s)-1 { // 新增 val
-			construct(k, i+1, val, prev)
+		if val != 0 || i == len(s)-1 { // 增长当前片段值的条件
+			construct(k, i+1, val, prev) // 回溯算法中的撤销选择: 不新增 k (IP 片段) 转而在当前片段增长 val
 		}
 	}
 
@@ -40,7 +41,7 @@ func main() {
 // 0 0 0
 // 1 1 0 2.
 // 2 2 0 2.5. 分支 1-1 分出前的交叉点 A, 在此之前只执行了第一个 construct
-// 3 3 0 2.5.5. k 达到 3 分支 1-1 从 L28 入口再次展开
+// 3 3 0 2.5.5. k 达到 3, 分支 1-1 从 L28 入口再次展开
 // 3 4 2 2.5.5.2
 // 3 5 25 2.5.5.25
 // 3 6 255 2.5.5.255

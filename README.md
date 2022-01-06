@@ -10,6 +10,12 @@
 
 [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) [Code](0042. Trapping Rain Water/trappingwater.go) ⭐⭐⭐
 
+[54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) [Code](0054. Spiral Matrix/spiralmatrix.go)
+
+[56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) [Code](0056. Merge Intervals/mergeintervals.go)
+
+[59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) [Code](0059. Spiral Matrix II/spiralmatrixII.go)
+
 [75. Sort Colors](https://leetcode.com/problems/sort-colors/) [Code](0075. Sort Colors/sortcolors.go)
 
 [78. Subsets](https://leetcode.com/problems/subsets/) [Code](0078. Subsets/subsets.go)
@@ -17,6 +23,8 @@
 [79. Word Search](https://leetcode.com/problems/word-search/) [Code](0079. Word Search/wordsearch.go)
 
 [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/) [Code](0088. Merge Sorted Array/mergesortedarray.go)
+
+[200. Number of Islands](https://leetcode.com/problems/number-of-islands/) [Code](0200. Number of Islands/number_islands.go)
 
 [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) [Code](0209. Minimum Size Subarray Sum/minsubarrlen.go)
 
@@ -26,17 +34,23 @@
 
 [704. Binary Search](https://leetcode.com/problems/binary-search/) [Code](0704. Binary Search/binarysearch.go)
 
+[912. Sort an Array](https://leetcode.com/problems/sort-an-array/) [Code]()
+
 [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) [Code](0977. Squares of a Sorted Array/sortedsquares.go)
 
 ### String
 
 [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) [Code](0003. Longest Substring Without Repeating Characters/longestsubstring.go) ⭐⭐⭐
 
+[8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) [Code]()
+
 [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) [Code](0030. Substring with Concatenation of All Words/substring.go)
+
+[58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/) [Code](0058. Length of Last Word/length_lastword.go)
 
 [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) [Code](0076. Minimum Window Substring/minwindow.go)
 
-[93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) [Code](0093. Restore IP Addresses/restoreip.go)
+[93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) [Code](0093. Restore IP Addresses/restoreip.go) ⭐⭐⭐
 
 [306. Additive Number](https://leetcode.com/problems/additive-number/) [Code](0306. Additive Number/additivenumber.go)
 
@@ -65,6 +79,10 @@
 [763. Partition Labels](https://leetcode.com/problems/partition-labels/) [Code](0763. Partition Labels/partitionlabels.go)
 
 ### Linked List
+
+[2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) [Code](0002. Add Two Numbers/add2nums.go)
+
+[21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) [Code](0021. Merge Two Sorted Lists/mergelists.go)
 
 [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) [Code](0023. Merge k Sorted Lists/mergeklists.go)
 
@@ -100,6 +118,10 @@
 
 [71. Simplify Path](https://leetcode.com/problems/simplify-path/) [Code](0071. Simplify Path/simplifypath.go)
 
+[155. Min Stack](https://leetcode.com/problems/min-stack/) [Code](0155. Min Stack/minstack.go)
+
+[232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Code](0232. Implement Queue using Stacks/queue.go)
+
 [726. Number of Atoms](https://leetcode.com/problems/number-of-atoms/) [Code](0726. Number of Atoms/atoms.go)
 
 [907. Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/) [Code](0907. Sum of Subarray Minimums/sum_subarraymins.go)
@@ -107,6 +129,8 @@
 ### Binary Tree !important
 
 [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) [Code](0094. Binary Tree Inorder Traversal/inordertraversal.go)
+
+[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) [Code](0102. Binary Tree Level Order Traversal/levelordertraversal.go)
 
 [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) [Code](0103. Binary Tree Zigzag Level Order Traversal/zigzaglevelorder.go)
 
@@ -120,7 +144,11 @@
 
 [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) [Code](0116. Populating Next Right Pointers in Each Node/connect.go) ⭐
 
+[199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) [Code](0119. Binary Tree Right Side View/rightsideview.go)
+
 [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) [Code](0226. Invert Binary Tree/invertbt.go)
+
+[236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) [Code](0236. Lowest Common Ancestor of a Binary Tree/lowestcommonancestor.go)
 
 [652. Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/) [Code](0652. Find Duplicate Subtrees/duplicatesubtree.go)
 
@@ -142,6 +170,10 @@
 
 ### Dynamic Programming
 
+[5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) [Code](0005. Longest Palindromic Substring/longestpalindrome.go)
+
+[53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) [Code](0053. Maximum Subarray/maxsubarray.go)
+
 [72. Edit Distance](https://leetcode.com/problems/edit-distance/) [Code](0072. Edit Distance/editdistance.go)
 
 [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) [Code](0121. Best Time to Buy and Sell Stock/stock.go)
@@ -157,6 +189,8 @@
 [887. Super Egg Drop](https://leetcode.com/problems/super-egg-drop/) [Code](0887. Super Egg Drop/supereggdrop.py)
 
 ### Hash Table
+
+[41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/) [Code](0041. First Missing Positive/missingpositive.go)
 
 [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/) [Code](0242. Valid Anagram/validanagram.go)
 
@@ -176,13 +210,13 @@
 
 [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) [Code]
 
-### Breadth-First Search
+### Breadth-First Search(BFS)
 
 [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/) [Code](0111. Minimum Depth of Binary Tree/mindepth.go) ⭐
 
 [752. Open the Lock](https://leetcode.com/problems/open-the-lock/) [Code](0752. Open the Lock/openlock.go) ⭐
 
-### Depth-First Search
+### Depth-First Search(DFS)
 
 [46. Permutations](https://leetcode.com/problems/permutations/) [Code](0046. Permutations/permutation.go)
 
@@ -190,8 +224,18 @@
 
 [78. Subsets](https://leetcode.com/problems/subsets/) [Code](0078. Subsets/subsets.go)
 
+[93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) [Code](0093. Restore IP Addresses/restoreip.go) ⭐⭐⭐
+
 [698. Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) [Code](0698. Partition to K Equal Sum Subsets/partition2k.go)
 
 ### Divide and conquer
 
 [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/) [Code](0241. Different Ways to Add Parentheses/addparentheses.go) ⭐
+
+### Math
+
+[231. Power of Two](https://leetcode.com/problems/power-of-two/) [Code](0231. Power of Two/power_two.go)
+
+### heap
+
+[239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) [Code](0239. Sliding Window Maximum/maxslidingwindow.go) ⭐

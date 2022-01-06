@@ -3,13 +3,13 @@ package main
 import "math"
 
 // Input: S = "ADOBECODEBANC", T = "ABC" Output: "BANC"
-// 滑动窗口，在滑动过程中不断包含 T，直到完全包含 T 的字符后，记下左右窗口位置和窗口大小，每次更新符合条件的窗口和窗口大小的最小值
+// 滑动窗口: 在滑动过程中不断包含 T 直到完全包含 T 后，记下左右窗口位置和窗口大小，每次更新符合条件的窗口和窗口大小的最小值
 // 整个过程窗口先从起点向右开始增长, count 到头后左边界向右收缩
 func minWindow(s string, t string) string {
 	// need window 分别记录 t 中字符出现次数(需凑齐)和窗口中对应字符出现次数
 	need, window := make(map[byte]int), make(map[byte]int)
-	for i := 0; i < len(s); i++ {
-		need[s[i]]++
+	for i := 0; i < len(t); i++ {
+		need[t[i]]++
 	}
 	left, right, valid := 0, 0, 0 // valid: 窗口内有效的字符个数
 	start, l := 0, math.MaxInt32  // 记录最小覆盖子串起始索引及长度
