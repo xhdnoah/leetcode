@@ -28,13 +28,13 @@
 
 [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) [Code](0209. Minimum Size Subarray Sum/minsubarrlen.go)
 
-[215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) [Code](0215. Kth Largest Element in an Array/kthlargest.go) ⭐
+[215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) [Code](0215. Kth Largest Element in an Array/topk.go) ⭐⭐⭐
 
 [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) [Code](0287. Find the Duplicate Number/findduplicate.go)
 
 [704. Binary Search](https://leetcode.com/problems/binary-search/) [Code](0704. Binary Search/binarysearch.go)
 
-[912. Sort an Array](https://leetcode.com/problems/sort-an-array/) [Code]()
+[912. Sort an Array](https://leetcode.com/problems/sort-an-array/) [Code](0912. Sort an Array/quicksort.go)
 
 [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) [Code](0977. Squares of a Sorted Array/sortedsquares.go)
 
@@ -42,7 +42,7 @@
 
 [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) [Code](0003. Longest Substring Without Repeating Characters/longestsubstring.go) ⭐⭐⭐
 
-[8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) [Code]()
+[8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) [Code](0008. String to Integer (atoi)/atoi.go)
 
 [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) [Code](0030. Substring with Concatenation of All Words/substring.go)
 
@@ -236,6 +236,6 @@
 
 [231. Power of Two](https://leetcode.com/problems/power-of-two/) [Code](0231. Power of Two/power_two.go)
 
-### heap
+### Heap
 
 [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) [Code](0239. Sliding Window Maximum/maxslidingwindow.go) ⭐
