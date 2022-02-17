@@ -48,19 +48,20 @@ func threeSumTarget(nums []int, target int) [][]int {
 	sort.Ints(nums)
 	ln := len(nums)
 	var res [][]int
-	for i, num := range nums {
-		tuples := twoSumTarget(nums, i+1, target-num)
+	for i := 0; i < ln; i++ {
+		tuples := twoSumTarget(nums, i+1, target-nums[i])
 		for _, tuple := range tuples {
-			tuple = append(tuple, num)
+			tuple = append(tuple, nums[i])
 			res = append(res, tuple)
 		}
-		for i < ln-1 && num == nums[i+1] {
+		for i < ln-1 && nums[i] == nums[i+1] {
 			i++ // 跳过重复元素
 		}
 	}
 	return res
 }
 
+// 双指针
 func twoSumTarget(nums []int, start int, target int) [][]int {
 	lo, hi := start, len(nums)-1
 	var res [][]int
@@ -68,7 +69,7 @@ func twoSumTarget(nums []int, start int, target int) [][]int {
 		sum := nums[lo] + nums[hi]
 		left, right := nums[lo], nums[hi]
 		if sum < target {
-			for lo < hi && nums[lo] == left {
+			for lo < hi && nums[lo] == left { // 跳过重复元素
 				lo++
 			}
 		} else if sum > target {

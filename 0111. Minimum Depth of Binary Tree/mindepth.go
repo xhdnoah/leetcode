@@ -7,6 +7,7 @@ type TreeNode struct {
 }
 
 // 最小深度是从根节点到最近叶子节点的最短路径上的节点数量
+// BFS 利用队列记录广度优先扫描的当前层结点
 func minDepth_BFS(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -19,7 +20,7 @@ func minDepth_BFS(root *TreeNode) int {
 		for i := 0; i < s; i++ {
 			cur := q[0]
 			q = q[1:]
-			if cur.Left == nil && cur.Right == nil {
+			if cur.Left == nil && cur.Right == nil { // 叶子结点
 				return depth
 			}
 			if cur.Left != nil {
@@ -35,21 +36,21 @@ func minDepth_BFS(root *TreeNode) int {
 }
 
 // DFS 利用递归栈记录路径
-func minDepth(root *TreeNode) int {
+func minDepth_DFS(root *TreeNode) int {
 	if root == nil { // base case
 		return 0
 	}
 	// 对于某一结点会面临三种情形 1 2 两种包含了都不存在的情形
 	// 1. 左结点不存在
 	if root.Left == nil {
-		return minDepth(root.Right) + 1
+		return minDepth_DFS(root.Right) + 1
 	}
 	// 2. 右结点不存在
 	if root.Right == nil {
-		return minDepth(root.Left) + 1
+		return minDepth_DFS(root.Left) + 1
 	}
 	// 3. 左右子结点都存在
-	return min(minDepth(root.Left), minDepth(root.Right))
+	return min(minDepth_DFS(root.Left), minDepth_DFS(root.Right))
 }
 
 func min(a, b int) int {

@@ -24,7 +24,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 func reverse(first *ListNode, last *ListNode) *ListNode {
 	prev := last
 	// prev: 4 first: 1->2->3->4 => prev: 1->4 first: 2->3->4 => prev: 2->1->4 first: 3->4 => prev: 3->2->1->4 first: 4(last)
-	for first != last {
+	for first != last { // 注意循环终止条件
 		tmp := first.Next
 		first.Next = prev
 		prev = first // prev 不断接收 first 结点指向 last 构造出反转链表

@@ -4,19 +4,21 @@
 
 [27. Remove Element](https://leetcode.com/problems/remove-element/) [Code](0027. Remove Element/removeelement.go)
 
-[31. Next Permutation](https://leetcode.com/problems/next-permutation/) [Code](0031. Next Permutation/nextpermutation.go)
+[31. Next Permutation](https://leetcode.com/problems/next-permutation/) [Code](0031. Next Permutation/nextpermutation.go) ⭐
 
-[33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) [Code](0033. Search in Rotated Sorted Array/search.go)
+[33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) [Code](0033. Search in Rotated Sorted Array/search.go) ⭐
+
+[34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) [Code](0034. Find First and Last Position of Element in Sorted Array/searchrange.go)
 
 [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) [Code](0042. Trapping Rain Water/trappingwater.go) ⭐⭐⭐
 
-[54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) [Code](0054. Spiral Matrix/spiralmatrix.go)
+[54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) [Code](0054. Spiral Matrix/spiralmatrix.go) ⭐
 
 [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) [Code](0056. Merge Intervals/mergeintervals.go)
 
 [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) [Code](0059. Spiral Matrix II/spiralmatrixII.go)
 
-[75. Sort Colors](https://leetcode.com/problems/sort-colors/) [Code](0075. Sort Colors/sortcolors.go)
+[75. Sort Colors](https://leetcode.com/problems/sort-colors/) [Code](0075. Sort Colors/sortcolors.go) ⭐
 
 [78. Subsets](https://leetcode.com/problems/subsets/) [Code](0078. Subsets/subsets.go)
 
@@ -24,7 +26,7 @@
 
 [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/) [Code](0088. Merge Sorted Array/mergesortedarray.go)
 
-[200. Number of Islands](https://leetcode.com/problems/number-of-islands/) [Code](0200. Number of Islands/number_islands.go)
+[200. Number of Islands](https://leetcode.com/problems/number-of-islands/) [Code](0200. Number of Islands/number_islands.go) ⭐
 
 [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) [Code](0209. Minimum Size Subarray Sum/minsubarrlen.go)
 
@@ -32,11 +34,13 @@
 
 [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) [Code](0287. Find the Duplicate Number/findduplicate.go)
 
+[540. Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/) [Code](0540. Single Element in a Sorted Array/singlenondup.go)
+
 [704. Binary Search](https://leetcode.com/problems/binary-search/) [Code](0704. Binary Search/binarysearch.go)
 
 [912. Sort an Array](https://leetcode.com/problems/sort-an-array/) [Code](0912. Sort an Array/quicksort.go)
 
-[977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) [Code](0977. Squares of a Sorted Array/sortedsquares.go)
+[977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) [Code](0977. Squares of a Sorted Array/sortedsquares.go) ⭐
 
 ### String
 
@@ -58,11 +62,15 @@
 
 ### Two Pointers 双指针
 
-[15. 3Sum](https://leetcode.com/problems/3sum/) [Code](0015. 3Sum/3sum.go)
+[15. 3Sum](https://leetcode.com/problems/3sum/) [Code](0015. 3Sum/3sum.go) ⭐
 
 [16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/) [Code](0016. 3 Sum Closest/3sumclosest.go)
 
 [18. 4Sum](https://leetcode.com/problems/4sum/) [Code](0018. 4Sum/4sum.go)
+
+[26. Remove Duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [Code](0026. Remove Duplicates from Sorted Array/removeduplicates.go)
+
+[27. Remove Element](https://leetcode.com/problems/remove-element/) [Code](0027. Remove Element/removeelement.go)
 
 [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) [Code](0042. Trapping Rain Water/trappingwater.go)
 
@@ -70,7 +78,7 @@
 
 [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) [Code](0088. Merge Sorted Array/mergesortedarray.go)
 
-[141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) [Code](0141. Linked List Cycle/linkedlistcycle.go)
+[141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) [Code](0141. Linked List Cycle/linkedlistcycle.go) ⭐
 
 [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) [Code](0142. Linked List Cycle II/linkedlistcycleII.go)
 
@@ -88,31 +96,31 @@
 
 [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) [Code](0024. Swap Nodes in Pairs/swappairs.go)
 
-[25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) [Code](0025. Reverse Nodes in k-Group/reversenodes.go)
+[25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) [Code](0025. Reverse Nodes in k-Group/reversenodes.go) ⭐
 
 [86. Partition List](https://leetcode.com/problems/partition-list/) [Code](0086. Partition List/partitionlist.go)
 
-[92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) [Code](0092. Reverse Linked List II/reverselinkedlistII.go)
+[92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) [Code](0092. Reverse Linked List II/reverselinkedlistII.go) ⭐
 
 [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) [Code](0141. Linked List Cycle/linkedlistcycle.go)
 
 [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) [Code](0142. Linked List Cycle II/linkedlistcycleII.go)
 
-[143. Reorder List](https://leetcode.com/problems/reorder-list/) [Code](0143. Reorder List/reorderlist.go)
+[143. Reorder List](https://leetcode.com/problems/reorder-list/) [Code](0143. Reorder List/reorderlist.go) ⭐
 
 [147. Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/) [Code](0147. Insertion Sort List/insertionsort.go)
 
-[160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) [Code](0160. Intersection of Two Linked Lists/intersection.go)
+[160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) [Code](0160. Intersection of Two Linked Lists/intersection.go) ⭐
 
 [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) [Code](0203. Remove Linked List Elements/removeels.go)
 
-[206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) [Code](0206. Reverse Linked List/reverselinkedlist.go)
+[206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) [Code](0206. Reverse Linked List/reverselinkedlist.go) ⭐
 
 [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) [Code](0876. Middle of the Linked List/middle_linkedlist.go)
 
 ### Stack
 
-[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) [Code](0020. Valid Parentheses/validparenthese.go)
+[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) [Code](0020. Valid Parentheses/validparenthese.go) ⭐
 
 [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) [Code](0042. Trapping Rain Water/trappingwater.go)
 
@@ -130,9 +138,9 @@
 
 [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) [Code](0094. Binary Tree Inorder Traversal/inordertraversal.go)
 
-[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) [Code](0102. Binary Tree Level Order Traversal/levelordertraversal.go)
+[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) [Code](0102. Binary Tree Level Order Traversal/levelordertraversal.go) ⭐
 
-[103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) [Code](0103. Binary Tree Zigzag Level Order Traversal/zigzaglevelorder.go)
+[103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) [Code](0103. Binary Tree Zigzag Level Order Traversal/zigzaglevelorder.go) ⭐
 
 [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) [Code](0104. Maximum Depth of Binary Tree/maxdepth_bt.go)
 
@@ -144,11 +152,11 @@
 
 [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) [Code](0116. Populating Next Right Pointers in Each Node/connect.go) ⭐
 
-[199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) [Code](0119. Binary Tree Right Side View/rightsideview.go)
+[199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) [Code](0119. Binary Tree Right Side View/rightsideview.go) ⭐
 
 [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) [Code](0226. Invert Binary Tree/invertbt.go)
 
-[236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) [Code](0236. Lowest Common Ancestor of a Binary Tree/lowestcommonancestor.go)
+[236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) [Code](0236. Lowest Common Ancestor of a Binary Tree/lowestcommonancestor.go) ⭐
 
 [652. Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/) [Code](0652. Find Duplicate Subtrees/duplicatesubtree.go)
 
@@ -174,13 +182,13 @@
 
 [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) [Code](0053. Maximum Subarray/maxsubarray.go)
 
-[72. Edit Distance](https://leetcode.com/problems/edit-distance/) [Code](0072. Edit Distance/editdistance.go)
+[72. Edit Distance](https://leetcode.com/problems/edit-distance/) [Code](0072. Edit Distance/editdistance.go) ⭐⭐⭐
 
-[121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) [Code](0121. Best Time to Buy and Sell Stock/stock.go)
+[121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) [Code](0121. Best Time to Buy and Sell Stock/stock.go) ⭐
 
 [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) [Code](0122. Best Time to Buy and Sell Stock II/stock.go)
 
-[300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) [Code](0300. Longest Increasing Subsequence/longestsubseq.go)
+[300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) [Code](0300. Longest Increasing Subsequence/longestsubseq.go) ⭐
 
 [322. Coin Change](https://leetcode.com/problems/coin-change/) [Code](0322. Coin Change/coinchange.go) ⭐⭐⭐
 
@@ -191,6 +199,8 @@
 ### Hash Table
 
 [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/) [Code](0041. First Missing Positive/missingpositive.go)
+
+[146. LRU Cache](https://leetcode.com/problems/lru-cache/) [Code](0146. LRU Cache/lrucache.go) ⭐⭐⭐
 
 [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/) [Code](0242. Valid Anagram/validanagram.go)
 
@@ -208,9 +218,11 @@
 
 [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/) [Code](0567. Permutation in String/permutation.go)
 
-[438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) [Code]
+[438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) [Code](0438. Find All Anagrams in a String/findanagrams.go)
 
 ### Breadth-First Search(BFS)
+
+[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) [Code](0102. Binary Tree Level Order Traversal/levelordertraversal.go) ⭐
 
 [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/) [Code](0111. Minimum Depth of Binary Tree/mindepth.go) ⭐
 
@@ -227,6 +239,18 @@
 [93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) [Code](0093. Restore IP Addresses/restoreip.go) ⭐⭐⭐
 
 [698. Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) [Code](0698. Partition to K Equal Sum Subsets/partition2k.go)
+
+### Binary Search 二分查找
+
+[33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) [Code](0033. Search in Rotated Sorted Array/search.go) ⭐
+
+[34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) [Code](0034. Find First and Last Position of Element in Sorted Array/searchrange.go)
+
+[35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) [Code](0035. Search Insert Position/searchinsert.go)
+
+[540. Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/) [Code](0540. Single Element in a Sorted Array/singlenondup.go)
+
+[704. Binary Search](https://leetcode.com/problems/binary-search/) [Code](0704. Binary Search/binarysearch.go)
 
 ### Divide and conquer
 

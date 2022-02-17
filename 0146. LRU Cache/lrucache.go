@@ -15,7 +15,7 @@ type Node struct {
 // ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
 // [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
 // Output: [null, null, null, 1, null, -1, null, -1, 3, 4]
-// Explanation: 最近最少使用淘汰
+// Explanation: 最近最少使用淘汰 Least Recently Used
 // LRUCache lRUCache = new LRUCache(2);
 // lRUCache.put(1, 1); // cache is {1=1}
 // lRUCache.put(2, 2); // cache is {1=1, 2=2}
@@ -26,11 +26,14 @@ type Node struct {
 // lRUCache.get(1);    // return -1 (not found)
 // lRUCache.get(3);    // return 3
 // lRUCache.get(4);    // return 4
-// LRU 更新和插入新页面都发生在链表首，删除页面都发生在链表尾
+// LRU 更新和插入发生在链表首部，删除尾部发生在插入时超出容量
+// 双向链表按照被使用的顺序存储键值对，头部数据最常使用而尾部则最近最少使用
+// 哈希表 普通的哈希映射 HashMap 通过缓存数据的键映射到其在双向链表中的位置
 func Constructor(capacity int) LRUCache {
 	return LRUCache{Keys: make(map[int]*Node), Cap: capacity}
 }
 
+// Get Put 必须以 O(1) 的平均时间复杂度运行 使用 HashMap
 // 在 map 中直接读取双向链表的结点, 存在就移动到双向链表表头并返回 value
 func (this *LRUCache) Get(key int) int {
 	if node, ok := this.Keys[key]; ok {
@@ -45,7 +48,7 @@ func (this *LRUCache) Get(key int) int {
 // 查询 map 存在 key 就更新 value 并移动到表头，不存在就新建
 func (this *LRUCache) Put(key int, value int) {
 	if node, ok := this.Keys[key]; ok {
-		node.Val = value
+		node.Val = value // 更新
 		this.Remove(node)
 		this.Add(node)
 		return
@@ -61,12 +64,12 @@ func (this *LRUCache) Put(key int, value int) {
 	}
 }
 
-// 添加至双向链表表头
+// 添加新结点至双向链表表头
 func (this *LRUCache) Add(node *Node) {
 	node.Prev = nil
 	node.Next = this.head // 指向当前表头
 	if this.head != nil {
-		this.head.Prev = node // 表头反指
+		this.head.Prev = node // 当前表头反指
 	}
 	this.head = node      // 被赋为新表头
 	if this.tail == nil { // 链表初始化时
@@ -80,7 +83,7 @@ func (this *LRUCache) Remove(node *Node) {
 	if node == this.head {
 		this.head = node.Next // head 新指
 		if node.Next != nil {
-			node.Next.Prev = nil // 断开连接
+			node.Next.Prev = nil // 断开后续结点连接
 		}
 		node.Next = nil
 		return

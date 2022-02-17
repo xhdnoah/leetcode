@@ -1,7 +1,8 @@
 package main
 
-// Input: s = "cbaebabacd", p = "abc" Output: [0,6]
+// Anagram: 同字母异序词
 // Input: s = "abab", p = "ab" Output: [0,1,2]
+// Input: s = "cbaebabacd", p = "abc" Output: [0,6]
 func findAnagrams(s string, p string) []int {
 	need, window := make(map[byte]int), make(map[byte]int)
 	for i := 0; i < len(p); i++ {
@@ -35,6 +36,6 @@ func findAnagrams(s string, p string) []int {
 }
 
 func main() {
-	// res := findAnagrams("cbaebabacd", "abc")
-	// res := findAnagrams("abab", "ab")
+	findAnagrams("abab", "ab")
+	findAnagrams("cbaebabacd", "abc")
 }

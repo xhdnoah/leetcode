@@ -6,7 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// 按照 Z 字型层序遍历一棵树
+// 按照 Z（之）字型层序遍历一棵树
 //     3
 //    / \
 //   9  20

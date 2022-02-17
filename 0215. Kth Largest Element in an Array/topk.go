@@ -11,13 +11,13 @@ func findKthLargest(nums []int, k int) int {
 }
 
 func quickSelect(nums []int, low, high, target int) int {
-	qivot := randomPartition(nums, low, high)
-	if qivot == target {
-		return nums[qivot]
-	} else if qivot < target {
-		return quickSelect(nums, qivot+1, high, target)
+	pivot := randomPartition(nums, low, high)
+	if pivot == target {
+		return nums[pivot]
+	} else if pivot < target {
+		return quickSelect(nums, pivot+1, high, target)
 	}
-	return quickSelect(nums, low, qivot-1, target)
+	return quickSelect(nums, low, pivot-1, target)
 }
 
 func randomPartition(nums []int, low, high int) int {
@@ -28,8 +28,7 @@ func randomPartition(nums []int, low, high int) int {
 }
 
 func partition(nums []int, low, high int) int {
-	pivot := nums[low]
-	i := low // 游标 i 确定最终基准点
+	i, pivot := low, nums[low] // 游标 i 确定最终基准点
 	for j := low + 1; j <= high; j++ {
 		if nums[j] < pivot { // j 向后查找小于 pivot 数
 			i++ // i 初值为 low 先右移再交换，小于 pivot 的元素都被交换到前面
