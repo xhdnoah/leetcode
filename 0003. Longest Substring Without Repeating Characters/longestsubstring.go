@@ -4,7 +4,7 @@ package main
 // 滑动窗口：右边界不断右移，只要没有重复字符，就持续向右扩大窗口边界
 // 出现重复字符缩小左边界，直到重复字符移出左边界，再继续移动右边界，每次移动更新最大长度
 func lengthOfLongestSubstring(s string) int {
-	window := make(map[byte]int)
+	window := make(map[byte]int) // 窗口内部字节出现频率
 	left, right, res := 0, 0, 0
 	for right < len(s) {
 		c := s[right]

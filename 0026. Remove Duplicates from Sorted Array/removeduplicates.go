@@ -21,3 +21,21 @@ func removeDuplicates(nums []int) int {
 	}
 	return last + 1
 }
+
+// [0,0,1,1,1,2,2,3,3,4] => [0,1,1,...] => .. => [0, 1, 2, 3, 4]
+func removeDuplicates_invariant(nums []int) int {
+	ln := len(nums)
+	if ln < 2 {
+		return ln
+	}
+	// 循环不变量 nums[0..j] 没有重复元素
+	// j 是刚刚赋值完的元素的下标
+	j := 0
+	for i := 1; i < ln; i++ {
+		if nums[i] != nums[j] { // 找到不重复的元素 [0,0,1]
+			j++
+			nums[j] = nums[i] // [0,1,..] j 指向第一个不重复的元素
+		}
+	}
+	return j + 1
+}

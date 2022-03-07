@@ -26,7 +26,7 @@ func zigzagLevelOrder_recursive(root *TreeNode) [][]int {
 	return res
 }
 
-// 前序遍历
+// dfs 前序遍历
 func search(root *TreeNode, depth int, res *[][]int) {
 	if root == nil {
 		return

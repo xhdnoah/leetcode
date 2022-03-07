@@ -35,7 +35,7 @@ func partition(nums []int, low, high int) int {
 			nums[i], nums[j] = nums[j], nums[i]
 		}
 	}
-	// 在之前遍历过程中，满足 nums[low+1..i] < pivot 且 nums[i..j] >= pivot
+	// 在之前遍历过程中，满足 nums[low+1,..i] < pivot 且 nums[i+1,..j] >= pivot
 	nums[low], nums[i] = nums[i], nums[low]
 	// 交换后 nums[low..i-1] < pivot, nums[i] = pivot, nums[i+1..high] >= pivot
 	return i

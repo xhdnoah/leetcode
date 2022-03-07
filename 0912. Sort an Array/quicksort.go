@@ -1,6 +1,7 @@
 package main
 
 func partition(arr []int, low, high int) int {
+	// 循环不变量：[low+1, i] 元素小于 pivot, [i+1, high] 元素大于 pivot
 	i, pivot := low, arr[low]
 	for j := low + 1; j <= high; j++ {
 		if arr[j] < pivot {
@@ -12,6 +13,7 @@ func partition(arr []int, low, high int) int {
 	return i // 最终基准点
 }
 
+// 快排 二叉树的前序遍历
 func quickSort(arr []int, low, high int) []int {
 	if low < high {
 		pivot := partition(arr, low, high)

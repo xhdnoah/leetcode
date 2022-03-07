@@ -6,7 +6,7 @@ type ListNode struct {
 }
 
 // Input: [ 1->4->5, 1->3->4, 2->6 ] Output: 1->1->2->3->4->4->5->6
-// 分而治之，最终将问题归为合并两个链表 Time Complexity O(log n)
+// 分而治之 or 后序遍历，最终将问题归为合并两个链表 Time Complexity O(log n)
 func mergeKLists(lists []*ListNode) *ListNode {
 	length := len(lists)
 	if length < 1 {
