@@ -20,10 +20,10 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 	return newHead
 }
 
-// 反转 [first, last) 区间(注意左闭右开)元素
+// 反转 [first, last) 区间元素 保持区间左闭右开循环不变
 func reverse(first *ListNode, last *ListNode) *ListNode {
 	prev := last
-	// prev: 4 first: 1->2->3->4 => prev: 1->4 first: 2->3->4 => prev: 2->1->4 first: 3->4 => prev: 3->2->1->4 first: 4(last)
+	// prev: 4, first: 1->2->3->4 => prev: 1->4, first: 2->3->4 => prev: 2->1->4, first: 3->4 => prev: 3->2->1->4, first: 4(last)
 	for first != last { // 注意循环终止条件
 		tmp := first.Next
 		first.Next = prev

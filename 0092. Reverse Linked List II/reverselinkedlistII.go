@@ -32,3 +32,26 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	}
 	return newHead.Next
 }
+
+// Better: 头插法
+func reverseBetween_head(head *ListNode, left, right int) *ListNode {
+	dummyHead := &ListNode{Val: 0, Next: head}
+	pre := dummyHead
+	// pre 指向 left 的前置节点
+	for i := 0; i < left-1; i++ {
+		pre = pre.Next
+	}
+	// Step1: p1, p2 用于区间内两两一翻转，执行 right-left 次
+	p1 := pre.Next // 2
+	p2 := p1.Next  // 3
+	for i := 0; i < right-left; i++ {
+		tmp := p2.Next // p2 断开后连接 4, 5
+		p2.Next = p1   // p2 节点头插前指 3->2, 4->3->2
+		p1 = p2        // 更新 p1 p2 (右移) 3, 4
+		p2 = tmp       // 4, 5
+	}
+	// Step2: 连接，注意顺序
+	pre.Next.Next = p2 // 2->5
+	pre.Next = p1      // 1->4(->3->2->5)
+	return dummyHead.Next
+}

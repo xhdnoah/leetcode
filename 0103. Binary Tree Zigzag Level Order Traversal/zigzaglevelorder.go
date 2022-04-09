@@ -39,6 +39,7 @@ func search(root *TreeNode, depth int, res *[][]int) {
 	} else { // 奇数层 往前 append
 		(*res)[depth] = append([]int{root.Val}, (*res)[depth]...)
 	}
+	// dfs 过程中携带深度信息
 	search(root.Left, depth+1, res)
 	search(root.Right, depth+1, res)
 }

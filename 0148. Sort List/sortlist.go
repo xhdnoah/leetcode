@@ -9,23 +9,21 @@ type ListNode struct {
 // Input: 4->2->1->3 Output: 1->2->3->4 Input: -1->5->3->4->0 Output: -1->0->3->4->5
 // 归并排序符合条件 (O(nlogn) time; O(1) space): No.876 取中点 + No.21 合并两个有序链表
 func sortList(head *ListNode) *ListNode {
-	cur := head
-	if cur.Next == nil {
+	if head == nil || head.Next == nil {
 		return head
 	}
 
-	middleNode := middleNode(head)
-	cur = middleNode.Next // 保存后半段起点
-	middleNode.Next = nil // 从中点断开链表
-	middleNode = cur
+	middleNode := getMiddleNode(head)
+	temp := middleNode.Next // 保存后半段起点
+	middleNode.Next = nil   // 从中点断开链表
 
 	left := sortList(head)
-	right := sortList(middleNode)
+	right := sortList(temp)
 	return mergeTwoLists(left, right)
 }
 
-// 快慢指针法（偶数链表 p1 停在中点前一个结点
-func middleNode(head *ListNode) *ListNode {
+// 快慢指针法（偶数链表时 p1 会停在中点前一个结点
+func getMiddleNode(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}

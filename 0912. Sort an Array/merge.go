@@ -1,5 +1,6 @@
 package main
 
+// 归并排序 后序遍历
 func mergeSort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr

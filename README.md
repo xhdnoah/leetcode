@@ -126,17 +126,27 @@
 
 [71. Simplify Path](https://leetcode.com/problems/simplify-path/) [Code](0071. Simplify Path/simplifypath.go)
 
-[155. Min Stack](https://leetcode.com/problems/min-stack/) [Code](0155. Min Stack/minstack.go)
-
 [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) [Code](0232. Implement Queue using Stacks/queue.go)
 
 [726. Number of Atoms](https://leetcode.com/problems/number-of-atoms/) [Code](0726. Number of Atoms/atoms.go)
 
 [907. Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/) [Code](0907. Sum of Subarray Minimums/sum_subarraymins.go)
 
+### Monotonous Stack 单调栈
+
+[42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) [Code](0042. Trapping Rain Water/trappingwater.go)
+
+[155. Min Stack](https://leetcode.com/problems/min-stack/) [Code](0155. Min Stack/minstack.go)
+
+[402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
+
+[739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+
 ### Binary Tree !important
 
 [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) [Code](0094. Binary Tree Inorder Traversal/inordertraversal.go)
+
+[100. Same Tree](https://leetcode.com/problems/same-tree/)
 
 [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) [Code](0102. Binary Tree Level Order Traversal/levelordertraversal.go) ⭐
 
@@ -148,9 +158,13 @@
 
 [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) [Code](0108. Convert Sorted Array to Binary Search Tree/array2bst.go)
 
+[110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
+
 [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) [Code](0114. Flatten Binary Tree to Linked List/flattenbt.go) ⭐
 
 [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) [Code](0116. Populating Next Right Pointers in Each Node/connect.go) ⭐
+
+[124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) [Code]()
 
 [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) [Code](0119. Binary Tree Right Side View/rightsideview.go) ⭐
 
@@ -258,8 +272,14 @@
 
 ### Math
 
+[136. Single Number](https://leetcode.com/problems/single-number/) [Code](0136. Single Number/singlenumber.go)
+
 [231. Power of Two](https://leetcode.com/problems/power-of-two/) [Code](0231. Power of Two/power_two.go)
 
 ### Heap
 
 [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) [Code](0239. Sliding Window Maximum/maxslidingwindow.go) ⭐
+
+### Greedy
+
+[402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/)

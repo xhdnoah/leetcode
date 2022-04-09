@@ -6,42 +6,49 @@ import (
 
 // Given array nums = [-1, 0, 1, 2, -1, -4],
 // A solution set is: [[-1, 0, 1],[-1, -1, 2]]
-// 双指针(解决重复问题) + 排序 or 用 map 提前计算好任意 2 个数字之和
-// index 从 1 开始，如果遇到相同元素则 start 直接跳至 index - 1
-// start end 指针向中间移动，如果发现移动前后元素相同则跳过 continue
+// 难点在于去重，双指针(解决重复问题) + 排序 or 用 map 提前计算好任意 2 个数字之和
+// 固定住最左（小）数字指针 index，双指针 start end 分设在数组索引 (index, len(nums)) 两端
+// 通过双指针交替向中间移动，记录对于每个固定指针 index 的所有满足三数和为 0 的 start end 组合
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
-	length, results := len(nums), make([][]int, 0)
-	for index, num := range nums {
-		if index == 0 {
-			continue
+	ln, res := len(nums), make([][]int, 0)
+	if ln == 0 {
+		return res
+	}
+	for index := range nums[:ln-1] {
+		if nums[index] > 0 {
+			break // because end > start > index 三个数字都大于 0
 		}
-		start, end := 0, length-1
-		if index > 1 && num == nums[index-1] {
-			start = index - 1
+		if index > 0 && nums[index] == nums[index-1] {
+			continue // skip the same nums[index] 此时已经将 nums[index-1] 所有组合加入到结果
 		}
-		for start < index && end > index {
-			if start > 0 && nums[start] == nums[start-1] {
-				start++
-				continue
-			}
-			if end < length-1 && nums[end] == nums[end+1] {
-				end--
-				continue
-			}
-			addNum := nums[start] + num + nums[end]
-			if addNum == 0 {
-				results = append(results, []int{nums[start], num, nums[end]})
-				start++
-				end--
-			} else if addNum > 0 {
-				end--
+		start, end := index+1, ln-1
+		for start < end { // double pointer
+			sum := nums[index] + nums[start] + nums[end]
+			if sum < 0 {
+				start += 1
+				for start < end && nums[start] == nums[start-1] {
+					start += 1
+				}
+			} else if sum > 0 {
+				end -= 1
+				for start < end && nums[end] == nums[end+1] {
+					end -= 1
+				}
 			} else {
-				start++
+				res = append(res, []int{nums[index], nums[start], nums[end]})
+				start += 1
+				end -= 1
+				for start < end && nums[start] == nums[start-1] {
+					start += 1
+				}
+				for start < end && nums[end] == nums[end+1] {
+					end -= 1
+				}
 			}
 		}
 	}
-	return results
+	return res
 }
 
 func threeSumTarget(nums []int, target int) [][]int {

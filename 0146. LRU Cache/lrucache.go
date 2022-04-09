@@ -1,7 +1,7 @@
 package main
 
 type LRUCache struct {
-	head, tail *Node         // 双向链表
+	head, tail *Node         // 双向链表的伪头部和伪尾部
 	Keys       map[int]*Node // 哈希表
 	Cap        int
 }
@@ -29,17 +29,24 @@ type Node struct {
 // LRU 更新和插入发生在链表首部，删除尾部发生在插入时超出容量
 // 双向链表按照被使用的顺序存储键值对，头部数据最常使用而尾部则最近最少使用
 // 哈希表 普通的哈希映射 HashMap 通过缓存数据的键映射到其在双向链表中的位置
+// 在双向链表的实现中，使用伪头部、伪尾部标记界限 免去在添加或删除节点时检查相邻节点是否存在
 func Constructor(capacity int) LRUCache {
-	return LRUCache{Keys: make(map[int]*Node), Cap: capacity}
+	l := LRUCache{
+		Keys: make(map[int]*Node),
+		head: &Node{},
+		tail: &Node{},
+		Cap:  capacity,
+	}
+	l.head.Next = l.tail
+	l.tail.Prev = l.head
+	return l
 }
 
 // Get Put 必须以 O(1) 的平均时间复杂度运行 使用 HashMap
 // 在 map 中直接读取双向链表的结点, 存在就移动到双向链表表头并返回 value
 func (this *LRUCache) Get(key int) int {
 	if node, ok := this.Keys[key]; ok {
-		// 将结点提升至最近使用
-		this.Remove(node)
-		this.Add(node)
+		this.MoveToHead(node) // 将结点提升至最近使用
 		return node.Val
 	}
 	return -1
@@ -49,8 +56,7 @@ func (this *LRUCache) Get(key int) int {
 func (this *LRUCache) Put(key int, value int) {
 	if node, ok := this.Keys[key]; ok {
 		node.Val = value // 更新
-		this.Remove(node)
-		this.Add(node)
+		this.MoveToHead(node)
 		return
 	} else {
 		node = &Node{Key: key, Val: value}
@@ -59,43 +65,27 @@ func (this *LRUCache) Put(key int, value int) {
 	}
 	// 最后需维护双向链表的 cap 若超出则淘汰最后结点
 	if len(this.Keys) > this.Cap {
-		delete(this.Keys, this.tail.Key)
-		this.Remove(this.tail)
+		node := this.tail.Prev
+		delete(this.Keys, node.Key)
+		this.Remove(node)
 	}
 }
 
 // 添加新结点至双向链表表头
 func (this *LRUCache) Add(node *Node) {
-	node.Prev = nil
-	node.Next = this.head // 指向当前表头
-	if this.head != nil {
-		this.head.Prev = node // 当前表头反指
-	}
-	this.head = node      // 被赋为新表头
-	if this.tail == nil { // 链表初始化时
-		this.tail = node
-		this.tail.Next = nil
-	}
+	node.Prev = this.head
+	node.Next = this.head.Next
+	this.head.Next.Prev = node
+	this.head.Next = node
 }
 
 // 删除双向链表任意结点
 func (this *LRUCache) Remove(node *Node) {
-	if node == this.head {
-		this.head = node.Next // head 新指
-		if node.Next != nil {
-			node.Next.Prev = nil // 断开后续结点连接
-		}
-		node.Next = nil
-		return
-	}
-	if node == this.tail {
-		this.tail = node.Prev // tail 新指
-		if node.Prev != nil {
-			node.Prev.Next = nil // 断开连接
-		}
-		node.Prev = nil
-		return
-	}
 	node.Prev.Next = node.Next // 断开与前结点的连接
 	node.Next.Prev = node.Prev // 断开与后结点的连接
+}
+
+func (this *LRUCache) MoveToHead(node *Node) {
+	this.Remove(node)
+	this.Add(node)
 }
