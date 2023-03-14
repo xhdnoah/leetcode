@@ -1,6 +1,7 @@
 package main
 
 import (
+	. "leetcode/utils"
 	"strconv"
 	"strings"
 )
@@ -20,7 +21,7 @@ func splitIntoFibonacci(S string) []int {
 		if first >= 1<<31 { // 剪枝条件：每个数字要求小于 2^31 - 1
 			break
 		}
-		for secondEnd := firstEnd + 1; max(firstEnd, secondEnd-firstEnd) <= len(S)-secondEnd; secondEnd++ {
+		for secondEnd := firstEnd + 1; Max(firstEnd, secondEnd-firstEnd) <= len(S)-secondEnd; secondEnd++ {
 			if S[firstEnd+1] == '0' && secondEnd-firstEnd > 1 {
 				break
 			}

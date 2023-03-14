@@ -1,6 +1,7 @@
 package main
 
 import (
+	. "leetcode/utils"
 	"strconv"
 	"strings"
 )
@@ -27,7 +28,7 @@ func isAdditiveNumber(num string) bool {
 		}
 		first, _ := strconv.Atoi(num[:firstEnd+1])
 		// 剪枝条件：第一个数字和第二个数字不能超过之和数字的长度
-		for secondEnd := firstEnd + 1; max(firstEnd, secondEnd-firstEnd) <= len(num)-secondEnd; secondEnd++ {
+		for secondEnd := firstEnd + 1; Max(firstEnd, secondEnd-firstEnd) <= len(num)-secondEnd; secondEnd++ {
 			if num[firstEnd+1] == '0' && secondEnd-firstEnd > 1 {
 				break
 			}
@@ -50,13 +51,6 @@ func recursiveCheck(num string, x1 int, x2 int, left int) bool {
 		return recursiveCheck(num, x2, x1+x2, left+len(strconv.Itoa(x1+x2)))
 	}
 	return false
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

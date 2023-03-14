@@ -1,6 +1,7 @@
 package main
 
 import (
+	. "leetcode/utils"
 	"math"
 )
 
@@ -13,17 +14,10 @@ func minSubArrayLen(target int, nums []int) int {
 	for j, num := range nums {
 		sum += num
 		for sum >= target {
-			subLen = min(subLen, j-i+1)
+			subLen = Min(subLen, j-i+1)
 			sum -= nums[i]
 			i++ // 精髓之处
 		}
 	}
 	return subLen
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

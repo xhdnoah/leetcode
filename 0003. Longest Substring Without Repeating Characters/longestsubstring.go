@@ -1,5 +1,7 @@
 package main
 
+import . "leetcode/utils"
+
 // Input: "pwwkew" Output: 3 ("wke")
 // 滑动窗口：右边界不断右移，只要没有重复字符，就持续向右扩大窗口边界
 // 出现重复字符缩小左边界，直到重复字符移出左边界，再继续移动右边界，每次移动更新最大长度
@@ -15,7 +17,7 @@ func lengthOfLongestSubstring(s string) int {
 			left++
 			window[d]--
 		}
-		res = max(res, right-left)
+		res = Max(res, right-left)
 	}
 	return res
 }
@@ -36,7 +38,7 @@ func lengthOfLongestSubstring_freq(s string) int {
 			freq[s[left]-'a']--
 			left--
 		}
-		res = max(res, right-left+1)
+		res = Max(res, right-left+1)
 	}
 	return res
 }
@@ -52,16 +54,9 @@ func lengthOfLongestSubstring_map(s string) int {
 		}
 		indexes[s[right]] = right
 		right++
-		res = max(res, right-left)
+		res = Max(res, right-left)
 	}
 	return res
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

@@ -2,6 +2,7 @@ package main
 
 import (
 	"sort"
+	. "leetcode/utils"
 )
 
 // Input: coins = [1,2,5], amount = 11 Output: 3 (11 = 5 + 5 + 1
@@ -16,7 +17,7 @@ func coinChange(coins []int, amount int) int {
 		for _, coin := range coins {
 			if coin <= target {
 				// dp[target - coin] + 1(*coin)
-				dp[target] = min(dp[target], 1+dp[target-coin])
+				dp[target] = Min(dp[target], 1+dp[target-coin])
 			}
 		}
 	}
@@ -38,7 +39,7 @@ func coinChange_DFS(coins []int, amount int) int {
 	dfs = func(start, amount, count int) { // DFS 搜索索引,剩余金额,已用硬币数量
 		cnt++
 		if amount == 0 {
-			ans = min(ans, count)
+			ans = Min(ans, count)
 			return
 		}
 		if start == lc {
@@ -93,19 +94,12 @@ func coinChange_Memo_DFS(coins []int, amount int) {
 		count := infinity
 		for _, coin := range coins {
 			if cnt := dfs(rem - coin); cnt != infinity {
-				count = min(count, cnt+1)
+				count = Min(count, cnt+1)
 			}
 		}
 		memo[rem] = count
 		return count
 	}
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }
 
 func main() {

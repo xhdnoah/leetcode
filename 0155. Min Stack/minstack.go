@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	. "leetcode/utils"
+	"math"
+)
 
 // Input: ["MinStack","push","push","push","getMin","pop","top","getMin"]
 // [[],[-2],[0],[-3],[],[],[],[]]
@@ -32,7 +35,7 @@ func Constructor() MinStack {
 func (this *MinStack) Push(x int) {
 	this.stack = append(this.stack, x)
 	top := this.minStack[len(this.minStack)-1]
-	this.minStack = append(this.minStack, min(x, top))
+	this.minStack = append(this.minStack, Min(x, top))
 }
 
 func (this *MinStack) Pop() {
@@ -46,13 +49,6 @@ func (this *MinStack) Top() int {
 
 func (this *MinStack) GetMin() int {
 	return this.minStack[len(this.minStack)-1]
-}
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 /**

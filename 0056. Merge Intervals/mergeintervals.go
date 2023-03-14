@@ -1,5 +1,7 @@
 package main
 
+import . "leetcode/utils"
+
 // Input: [[1,3],[2,6],[8,10],[15,18]] Output: [[1,6],[8,10],[15,18]]
 // Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6]
 // 先按照区间起点进行排序。然后从区间起点小的开始扫描，依次合并每个有重叠的区间。
@@ -15,7 +17,7 @@ func merge(intervals [][]int) [][]int {
 			cur++
 			res = append(res, intervals[next])
 		} else {
-			res[cur][1] = max(intervals[next][1], res[cur][1])
+			res[cur][1] = Max(intervals[next][1], res[cur][1])
 		}
 	}
 	return res
@@ -44,13 +46,6 @@ func quickSort(a [][]int, lo, hi int) {
 	p := partitionSort(a, lo, hi)
 	quickSort(a, lo, p-1)
 	quickSort(a, p+1, hi)
-}
-
-func max(a int, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func main() {

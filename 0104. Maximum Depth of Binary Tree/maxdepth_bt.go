@@ -1,5 +1,7 @@
 package main
 
+import . "leetcode/utils"
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -7,18 +9,18 @@ type TreeNode struct {
 }
 
 // Given binary tree [3,9,20,null,null,15,7],
-// 3
+//  3
 // / \
 // 9  20
-//  /  \
-// 15   7
+//	 /  \
+//  15  7
 // return its depth = 3
 // 递归：遍历根节点的左孩子的高度和根节点右孩子的高度，取出两者的最大值 + 1
 func maxDepth_dfs(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	return max(maxDepth_dfs(root.Left), maxDepth_dfs(root.Right)) + 1
+	return Max(maxDepth_dfs(root.Left), maxDepth_dfs(root.Right)) + 1
 }
 
 // 层级遍历 借助队列实现
@@ -44,11 +46,4 @@ func maxDepth_bfs(root *TreeNode) int {
 		level++
 	}
 	return level
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }

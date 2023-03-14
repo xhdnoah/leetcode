@@ -1,6 +1,8 @@
 package main
 
-import "math"
+import (
+	. "leetcode/utils"
+)
 
 // Input: word1 = "intention", word2 = "execution" Output: 5
 // intention -> inention (remove 't')
@@ -28,7 +30,7 @@ func minDistance(word1 string, word2 string) int {
 		if word1[i] == word2[j] {
 			memo[tuple] = dp(i-1, j-1)
 		} else {
-			memo[tuple] = min(
+			memo[tuple] = Minimum(
 				dp(i, j-1)+1,   // insert
 				dp(i-1, j)+1,   // delete
 				dp(i-1, j-1)+1, // replace
@@ -37,14 +39,4 @@ func minDistance(word1 string, word2 string) int {
 		return memo[tuple]
 	}
 	return dp(len(word1)-1, len(word2)-1)
-}
-
-func min(nums ...int) int {
-	m := math.MaxInt32
-	for _, v := range nums {
-		if v < m {
-			m = v
-		}
-	}
-	return m
 }

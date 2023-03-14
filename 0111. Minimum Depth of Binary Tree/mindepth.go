@@ -1,5 +1,7 @@
 package main
 
+import . "leetcode/utils"
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -50,12 +52,5 @@ func minDepth_DFS(root *TreeNode) int {
 		return minDepth_DFS(root.Left) + 1
 	}
 	// 3. 左右子结点都存在
-	return min(minDepth_DFS(root.Left), minDepth_DFS(root.Right))
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+	return Min(minDepth_DFS(root.Left), minDepth_DFS(root.Right))
 }

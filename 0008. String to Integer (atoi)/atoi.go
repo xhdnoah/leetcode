@@ -1,6 +1,7 @@
 package main
 
 import (
+	. "leetcode/utils"
 	"math"
 	"unicode"
 )
@@ -66,9 +67,9 @@ func (this *Automation) get(c rune) {
 	if this.state == "in_number" {
 		this.ans = this.ans*10 + int(c-'0')
 		if this.sign == 1 {
-			this.ans = min(this.ans, math.MaxInt32)
+			this.ans = Min(this.ans, math.MaxInt32)
 		} else {
-			this.ans = min(this.ans, -math.MinInt32)
+			this.ans = Min(this.ans, -math.MinInt32)
 		}
 	} else if this.state == "signed" {
 		if c == '+' {
@@ -77,11 +78,4 @@ func (this *Automation) get(c rune) {
 			this.sign = -1
 		}
 	}
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }
