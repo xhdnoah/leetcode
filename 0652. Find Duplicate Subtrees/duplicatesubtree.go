@@ -1,12 +1,10 @@
 package main
 
-import "strconv"
+import (
+	"strconv"
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+	. "leetcode/utils"
+)
 
 // 后序遍历 序列化子树 寻找重复序列
 func findDuplicateSubtrees(root *TreeNode) []*TreeNode {

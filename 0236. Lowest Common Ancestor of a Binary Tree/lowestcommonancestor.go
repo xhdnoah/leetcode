@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先
 // 递归 + 后序遍历(需要先知道左右子树的情况，然后决定向上返回什么

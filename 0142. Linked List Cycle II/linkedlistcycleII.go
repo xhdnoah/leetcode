@@ -1,9 +1,6 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 // Input: head = [3,2,0,-4], pos = 1 Output: tail connects to node index 1
 // 快慢指针相遇以后，如果 slow 继续往前走，fast 指针回到起点 head，两者都每次走一步，那么必定会在环的起点相遇

@@ -1,9 +1,6 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 // Input: head = [1,2,3,4,5] Output: [5,4,3,2,1]
 func reverseList(head *ListNode) *ListNode {

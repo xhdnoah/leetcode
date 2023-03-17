@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // 自底至顶：提前阻断
 func isBalanced(root *TreeNode) bool {

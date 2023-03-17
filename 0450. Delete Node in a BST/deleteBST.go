@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 func deleteNode(root *TreeNode, key int) *TreeNode {
 	if root == nil {

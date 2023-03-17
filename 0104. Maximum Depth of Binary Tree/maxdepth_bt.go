@@ -1,19 +1,21 @@
 package main
 
-import . "leetcode/utils"
+import (
+	. "leetcode/utils"
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+	. "leetcode/utils"
+)
 
 // Given binary tree [3,9,20,null,null,15,7],
-//  3
+//
+//	3
+//
 // / \
 // 9  20
-//	 /  \
-//  15  7
+//
+//		 /  \
+//	 15  7
+//
 // return its depth = 3
 // 递归：遍历根节点的左孩子的高度和根节点右孩子的高度，取出两者的最大值 + 1
 func maxDepth_dfs(root *TreeNode) int {

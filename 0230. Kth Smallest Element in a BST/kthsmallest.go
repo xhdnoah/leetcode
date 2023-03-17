@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 func kthSmallest(root *TreeNode, k int) int {
 	res, count := 0, 0

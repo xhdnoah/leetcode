@@ -1,9 +1,6 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 // Input: -1->5->3->4->0 Output: -1->0->3->4->5
 func insertionSortList(head *ListNode) *ListNode {

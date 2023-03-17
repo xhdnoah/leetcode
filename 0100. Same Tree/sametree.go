@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // 对称性递归：特殊处理 + 返回值
 // 特殊：左右都 nil；返回：左右都不空 + root,left,right 相同

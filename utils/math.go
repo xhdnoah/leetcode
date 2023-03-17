@@ -2,11 +2,16 @@ package utils
 
 import "math"
 
-func Min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+const Mod int = 1e9 + 7
+
+type comparable interface {
+	int | int8 | int16 | int32 | int64 |
+		uint | uint8 | uint16 | uint32 | uint64 |
+		float32 | float64
+}
+
+func Min[T comparable](x, y T) T {
+	return T(math.Min(float64(x), float64(y)))
 }
 
 func Minimum(nums ...int) int {
@@ -19,9 +24,6 @@ func Minimum(nums ...int) int {
 	return m
 }
 
-func Max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+func Max[T comparable](x, y T) T {
+	return T(math.Max(float64(x), float64(y)))
 }

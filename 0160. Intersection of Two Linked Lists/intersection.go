@@ -1,9 +1,6 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 // 找到两个链表的交叉点，思路类似链表找环
 // 给定两个链表如果长度一样，从头往后扫即可

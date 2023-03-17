@@ -3,10 +3,7 @@ package main
 // Input: head = [3,2,0,-4], pos = 1 Output: true
 // pos is used to denote the index of the node that tail's next pointer is connected to
 // 快慢指针：快指针一次走 2 格，慢指针一次走 1 格。如果存在环，那么前一个指针一定会经过若干圈之后追上慢的指针
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 func hasCycle(head *ListNode) bool {
 	slow := head

@@ -1,12 +1,10 @@
 package main
 
-import . "leetcode/utils"
+import (
+	. "leetcode/utils"
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+	. "leetcode/utils"
+)
 
 // 最小深度是从根节点到最近叶子节点的最短路径上的节点数量
 // BFS 利用队列记录广度优先扫描的当前层结点

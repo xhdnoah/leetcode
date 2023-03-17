@@ -4,10 +4,7 @@ package main
 // Input: head = 1->4->3->2->5->2, x = 3 Output: 1->2->2->4->3->5
 // 简单做法是构造双向链表，时间复杂度 O(n^2) 更优是新构造 2 个链表，一个存储 < x 的结点，另一个存储 >= x 的结点
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 func partition(head *ListNode, x int) *ListNode {
 	beforeHead := &ListNode{Val: 0, Next: nil}

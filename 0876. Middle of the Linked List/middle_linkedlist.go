@@ -1,9 +1,6 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode/utils"
 
 func middleNode(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

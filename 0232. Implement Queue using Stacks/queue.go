@@ -38,12 +38,12 @@ func (q *MyQueue) Empty() bool {
 }
 
 func (q *MyQueue) in2out() {
-	if len(q.outStack) == 0 {
-		for len(q.inStack) != 0 {
-			lps := len(q.inStack)
-			q.outStack = append(q.outStack, q.inStack[lps-1])
-			q.inStack = q.inStack[:lps-1]
-		}
+	if len(q.outStack) > 0 {
+		return
+	}
+	for len(q.inStack) > 0 {
+		q.outStack = append(q.outStack, q.inStack[len(q.inStack)-1]) // 输出栈接受元素
+		q.inStack = q.inStack[:len(q.inStack)-1]                     // 输入栈弹出元素
 	}
 }
 

@@ -1,18 +1,18 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // Input: root = [1,2,3,null,5,null,4] Output: [1,3,4]
 // Explanation:
-//    1            <---
-//  /   \
+//
+//	  1            <---
+//	/   \
+//
 // 2     3         <---
-//  \     \
-//   5     4       <---
+//
+//	\     \
+//	 5     4       <---
+//
 // 按层序遍历元素，依次取每层最右元素。用一个队列实现
 func rightSideView(root *TreeNode) []int {
 	res := []int{}

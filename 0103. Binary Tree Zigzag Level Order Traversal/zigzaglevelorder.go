@@ -1,22 +1,22 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // 按照 Z（之）字型层序遍历一棵树
-//     3
-//    / \
-//   9  20
-//  /    \
+//
+//	   3
+//	  / \
+//	 9  20
+//	/    \
+//
 // 15    7
 // return its zigzag level order traversal as:
 // [
-//   [3],
-//   [20,9],
-//   [15,7]
+//
+//	[3],
+//	[20,9],
+//	[15,7]
+//
 // ]
 // 按层序从上到下遍历一颗树，但是每一层的顺序是相互反转的
 // 即上一层从左往右，下一层就从右往左，以此类推。可用队列实现

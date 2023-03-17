@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // 1. Create a root node whose value is the maximum value in nums.
 // 2. Recursively build the left subtree on the subarray prefix to the left of the maximum value.

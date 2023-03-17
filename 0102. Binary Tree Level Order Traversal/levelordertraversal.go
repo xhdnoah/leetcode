@@ -1,21 +1,21 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 // Input: [3,9,20,null,null,15,7],
-//     3
-//    / \
-//   9  20
-//     /  \
-//    15   7
+//
+//	  3
+//	 / \
+//	9  20
+//	  /  \
+//	 15   7
+//
 // Output: [
-//   [3],
-//   [9,20],
-//   [15,7]
+//
+//	[3],
+//	[9,20],
+//	[15,7]
+//
 // ]
 // 按层序遍历 广度优先并使用队列记录每一层的结点
 func levelOrder_bfs(root *TreeNode) [][]int {

@@ -1,10 +1,6 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "leetcode/utils"
 
 func isValidBST(root *TreeNode) bool {
 	return validateWithRestriction(root, nil, nil)
