@@ -2,8 +2,6 @@ package main
 
 import (
 	. "leetcode/utils"
-
-	. "leetcode/utils"
 )
 
 // 最小深度是从根节点到最近叶子节点的最短路径上的节点数量
@@ -36,19 +34,18 @@ func minDepth_BFS(root *TreeNode) int {
 }
 
 // DFS 利用递归栈记录路径
-func minDepth_DFS(root *TreeNode) int {
+// 对于每一个非叶子节点，只需要分别关注其左右子树的最小叶子节点深度
+func minDepth(root *TreeNode) int {
 	if root == nil { // base case
 		return 0
 	}
-	// 对于某一结点会面临三种情形 1 2 两种包含了都不存在的情形
-	// 1. 左结点不存在
-	if root.Left == nil {
-		return minDepth_DFS(root.Right) + 1
+	left, right := minDepth(root.Left), minDepth(root.Right)
+	// 关键在于理清楚递归结束条件
+	// 如果左或右子树深度不为 0 即存在一个子树则当前子树最小深度就是该子树深度+1
+	// 如果左右子树都不为 0 说明两颗子树都存在那么当前子树最小深度就是它们的较小值+1
+	if left == 0 || right == 0 {
+		return left + right + 1
+	} else {
+		return Min(left, right) + 1
 	}
-	// 2. 右结点不存在
-	if root.Right == nil {
-		return minDepth_DFS(root.Left) + 1
-	}
-	// 3. 左右子结点都存在
-	return Min(minDepth_DFS(root.Left), minDepth_DFS(root.Right))
 }
