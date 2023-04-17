@@ -42,11 +42,42 @@ func Constructor(capacity int) LRUCache {
 	return l
 }
 
+// 添加新结点至双向链表表头
+func (this *LRUCache) addNode(node *Node) {
+	node.Prev = this.head
+	node.Next = this.head.Next
+	this.head.Next.Prev = node
+	this.head.Next = node
+}
+
+// 删除双向链表任意结点
+func (this *LRUCache) removeNode(node *Node) {
+	node.Prev.Next = node.Next // 断开与前结点的连接
+	node.Next.Prev = node.Prev // 断开与后结点的连接
+}
+
+func (this *LRUCache) addRecently(key, val int) {
+	node := &Node{Key: key, Val: val}
+	this.Keys[key] = node
+	this.addNode(node)
+}
+
+func (this *LRUCache) makeRecently(node *Node) {
+	this.removeNode(node)
+	this.addNode(node)
+}
+
+func (this *LRUCache) removeLeastRecently() {
+	node := this.tail.Prev
+	delete(this.Keys, node.Key)
+	this.removeNode(node)
+}
+
 // Get Put 必须以 O(1) 的平均时间复杂度运行 使用 HashMap
 // 在 map 中直接读取双向链表的结点, 存在就移动到双向链表表头并返回 value
 func (this *LRUCache) Get(key int) int {
 	if node, ok := this.Keys[key]; ok {
-		this.MoveToHead(node) // 将结点提升至最近使用
+		this.makeRecently(node) // 将结点提升至最近使用
 		return node.Val
 	}
 	return -1
@@ -55,37 +86,13 @@ func (this *LRUCache) Get(key int) int {
 // 查询 map 存在 key 就更新 value 并移动到表头，不存在就新建
 func (this *LRUCache) Put(key int, value int) {
 	if node, ok := this.Keys[key]; ok {
-		node.Val = value // 更新
-		this.MoveToHead(node)
+		node.Val = value // 更新 map
+		this.makeRecently(node)
 		return
-	} else {
-		node = &Node{Key: key, Val: value}
-		this.Keys[key] = node
-		this.Add(node)
 	}
-	// 最后需维护双向链表的 cap 若超出则淘汰最后结点
-	if len(this.Keys) > this.Cap {
-		node := this.tail.Prev
-		delete(this.Keys, node.Key)
-		this.Remove(node)
+	// 维护双向链表的 cap 若超出则淘汰最后结点
+	if len(this.Keys) == this.Cap {
+		this.removeLeastRecently()
 	}
-}
-
-// 添加新结点至双向链表表头
-func (this *LRUCache) Add(node *Node) {
-	node.Prev = this.head
-	node.Next = this.head.Next
-	this.head.Next.Prev = node
-	this.head.Next = node
-}
-
-// 删除双向链表任意结点
-func (this *LRUCache) Remove(node *Node) {
-	node.Prev.Next = node.Next // 断开与前结点的连接
-	node.Next.Prev = node.Prev // 断开与后结点的连接
-}
-
-func (this *LRUCache) MoveToHead(node *Node) {
-	this.Remove(node)
-	this.Add(node)
+	this.addRecently(key, value)
 }

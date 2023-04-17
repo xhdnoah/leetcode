@@ -20,9 +20,12 @@ func nextPermutation(nums []int) {
 		for nums[i] >= nums[k] { // find nums[i] < nums[k]
 			k--
 		}
-		swap(&nums, i, j)
+		nums[i], nums[k] = nums[k], nums[i]
 	}
-	reverse(&nums, i+1, ln-1)
+	// reverse nums[j:end]
+	for i, j := j, len(nums)-1; i < j; i, j = i+1, j-1 {
+		nums[i], nums[j] = nums[j], nums[i]
+	}
 }
 
 // 对升/降序数组原地反转

@@ -11,13 +11,14 @@ func findKthLargest(nums []int, k int) int {
 }
 
 func quickSelect(nums []int, low, high, target int) int {
-	pivot := randomPartition(nums, low, high)
-	if pivot == target {
-		return nums[pivot]
-	} else if pivot < target {
+	switch pivot := randomPartition(nums, low, high); {
+	case pivot < target:
 		return quickSelect(nums, pivot+1, high, target)
+	case pivot > target:
+		return quickSelect(nums, low, pivot-1, target)
+	default:
+		return nums[pivot]
 	}
-	return quickSelect(nums, low, pivot-1, target)
 }
 
 func randomPartition(nums []int, low, high int) int {

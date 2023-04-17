@@ -7,48 +7,43 @@ import (
 // Given array nums = [-1, 0, 1, 2, -1, -4],
 // A solution set is: [[-1, 0, 1],[-1, -1, 2]]
 // 难点在于去重，双指针(解决重复问题) + 排序 or 用 map 提前计算好任意 2 个数字之和
-// 固定住最左（小）数字指针 index，双指针 start end 分设在数组索引 (index, len(nums)) 两端
+// 固定住最左最小数字指针 index 双指针 start end 分设在数组索引 [index+1:len(nums)-1] 两端
 // 通过双指针交替向中间移动，记录对于每个固定指针 index 的所有满足三数和为 0 的 start end 组合
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
-	ln, res := len(nums), make([][]int, 0)
-	if ln == 0 {
-		return res
-	}
-	for index := range nums[:ln-1] {
-		if nums[index] > 0 {
-			break // because end > start > index 三个数字都大于 0
+	n, ans := len(nums), make([][]int, 0)
+
+	for index, num := range nums[:n-1] {
+		if index > 0 && num == nums[index-1] {
+			continue // 去重 skip the same nums[index] 此时已经将 nums[index-1] 所有组合加入到结果
 		}
-		if index > 0 && nums[index] == nums[index-1] {
-			continue // skip the same nums[index] 此时已经将 nums[index-1] 所有组合加入到结果
-		}
-		start, end := index+1, ln-1
+		start, end := index+1, n-1
 		for start < end { // double pointer
-			sum := nums[index] + nums[start] + nums[end]
-			if sum < 0 {
-				start += 1
+			switch sum := num + nums[start] + nums[end]; {
+			case sum < 0:
+				start++ // 左指针右移同时去重
 				for start < end && nums[start] == nums[start-1] {
-					start += 1
+					start++
 				}
-			} else if sum > 0 {
-				end -= 1
+			case sum > 0:
+				end-- // 右指针左移同时去重
 				for start < end && nums[end] == nums[end+1] {
-					end -= 1
+					end--
 				}
-			} else {
-				res = append(res, []int{nums[index], nums[start], nums[end]})
-				start += 1
-				end -= 1
+			default:
+				ans = append(ans, []int{num, nums[start], nums[end]})
+				start++
+				end--
 				for start < end && nums[start] == nums[start-1] {
-					start += 1
+					start++
 				}
 				for start < end && nums[end] == nums[end+1] {
-					end -= 1
+					end--
 				}
 			}
 		}
 	}
-	return res
+	return ans
 }
 
 func threeSumTarget(nums []int, target int) [][]int {

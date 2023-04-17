@@ -2,23 +2,12 @@ package main
 
 import . "leetcode/utils"
 
+// 快慢指针
 func middleNode(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
+	slow, fast := head, head
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next.Next
+		slow = slow.Next
 	}
-	p1 := head
-	p2 := head
-	for p2.Next != nil && p2.Next.Next != nil {
-		p1 = p1.Next
-		p2 = p2.Next.Next
-	}
-	length, cur := 0, head
-	for cur != nil {
-		length++
-		cur = cur.Next
-	}
-	if length%2 == 0 {
-		return p1.Next
-	}
-	return p1
+	return slow
 }

@@ -20,7 +20,7 @@ func search(nums []int, target int) int {
 				lo = mid + 1
 			}
 		} else { // [mid+1, hi] 有序
-			if nums[mid] < target && target <= nums[len(nums)-1] { // target 在 [mid+1, hi] 区间内
+			if nums[mid] < target && target <= nums[hi] { // target 在 [mid+1, hi] 区间内
 				lo = mid + 1
 			} else {
 				hi = mid - 1

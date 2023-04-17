@@ -9,7 +9,7 @@ import . "leetcode/utils"
 // 2. p = root 且 q 在 root 的左或右子树中; 3. q = root 且 p 在 root 的左或右子树中；
 // 考虑通过递归对二叉树进行遍历，当遇到节点 p 或 q 时返回，从底至顶回溯
 // 当节点 p, q 在节点 root 的异侧时，节点 root 即为最近公共祖先，则向上返回 root
-func lowestCommonAncestor(root, p, q *TreeNoe) *TreeNode {
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	// 越过叶节点返回 nil 遇到 pq 返回因为不能更深了
 	if root == nil || root == p || root == q {
 		return root

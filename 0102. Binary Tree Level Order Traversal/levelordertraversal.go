@@ -19,44 +19,40 @@ import . "leetcode/utils"
 // ]
 // 按层序遍历 广度优先并使用队列记录每一层的结点
 func levelOrder_bfs(root *TreeNode) [][]int {
-	if root == nil {
-		return [][]int{}
-	}
+	ans := make([][]int, 0)
 	queue := []*TreeNode{root}
-	res := make([][]int, 0)
 	for len(queue) > 0 {
-		l := len(queue)
-		tmp := make([]int, 0, l)
-		for i := 0; i < l; i++ {
-			if queue[i].Left != nil {
-				queue = append(queue, queue[i].Left)
+		n := len(queue)
+		tmp := make([]int, 0, n)
+		for _, node := range queue {
+			if node.Left != nil {
+				queue = append(queue, node.Left)
 			}
-			if queue[i].Right != nil {
-				queue = append(queue, queue[i].Right)
+			if node.Right != nil {
+				queue = append(queue, node.Right)
 			}
-			tmp = append(tmp, queue[i].Val)
+			tmp = append(tmp, node.Val)
 		}
-		queue = queue[l:]
-		res = append(res, tmp)
+		queue = queue[n:] // 进入下一层之前去除当前层结点
+		ans = append(ans, tmp)
 	}
-	return res
+	return ans
 }
 
 func levelOrder_dfs(root *TreeNode) [][]int {
-	var res [][]int
+	var ans [][]int
 	var dfsLevel func(node *TreeNode, level int)
-	dfsLevel = func(node *TreeNode, level int) {
-		if node == nil {
+	dfsLevel = func(node *TreeNode, level int) { // 递归传递层级信息
+		if node == nil { // 递归终止条件：到达叶子结点
 			return
 		}
-		if len(res) == level { // 到达新一层
-			res = append(res, []int{node.Val})
-		} else {
-			res[level] = append(res[level], node.Val)
+		if len(ans) == level { // 到达新一层
+			ans = append(ans, []int{})
 		}
+		ans[level] = append(ans[level], node.Val)
 		dfsLevel(node.Left, level+1)
 		dfsLevel(node.Right, level+1)
 	}
 	dfsLevel(root, 0)
-	return res
+	return ans
 }
