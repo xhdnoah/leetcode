@@ -14,6 +14,10 @@ func Min[T comparable](x, y T) T {
 	return T(math.Min(float64(x), float64(y)))
 }
 
+func Max[T comparable](x, y T) T {
+	return T(math.Max(float64(x), float64(y)))
+}
+
 func Minimum(nums ...int) int {
 	m := math.MaxInt32
 	for _, v := range nums {
@@ -24,6 +28,12 @@ func Minimum(nums ...int) int {
 	return m
 }
 
-func Max[T comparable](x, y T) T {
-	return T(math.Max(float64(x), float64(y)))
+func Maximum(nums ...int) int {
+	m := math.MinInt32
+	for _, v := range nums {
+		if v > m {
+			m = v
+		}
+	}
+	return m
 }

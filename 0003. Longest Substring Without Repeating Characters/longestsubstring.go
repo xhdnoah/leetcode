@@ -3,8 +3,8 @@ package main
 import . "leetcode/utils"
 
 // Input: "pwwkew" Output: 3 ("wke")
-// 滑动窗口：右边界不断右移，只要没有重复字符，就持续向右扩大窗口边界
-// 出现重复字符缩小左边界，直到重复字符移出左边界，再继续移动右边界，每次移动更新最大长度
+// 滑动窗口：右边界不断右移，将未知字节合入窗口
+// 再通过不断右移左边界保证新字节不重复，每次循环更新最值
 func lengthOfLongestSubstring(s string) int {
 	window := make(map[byte]int) // 窗口内部字节出现频率
 	left, right, res := 0, 0, 0
@@ -12,7 +12,10 @@ func lengthOfLongestSubstring(s string) int {
 		c := s[right]
 		right++
 		window[c]++
-		for window[c] > 1 {
+		// 有点 K8s 控制器模型的思想
+		// 我不关心 window[c] 具体值然后具体操作 
+		// 只认准需要达到的状态 然后循环 reconcile 到目标状态
+		for window[c] > 1 { 
 			d := s[left]
 			left++
 			window[d]--
