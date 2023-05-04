@@ -6,7 +6,7 @@ import . "leetcode/utils"
 // 分而治之 or 后序遍历，最终将问题归为合并两个链表 Time Complexity O(log n)
 func mergeKLists(lists []*ListNode) *ListNode {
 	length := len(lists)
-	if length < 1 {
+	if length == 0 {
 		return nil
 	}
 	if length == 1 {

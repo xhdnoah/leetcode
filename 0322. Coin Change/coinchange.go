@@ -9,14 +9,12 @@ import (
 // 动态规划 dp[i] = x 代表当目标金额为 i 至少需要 x 枚硬币
 func coinChange(coins []int, amount int) int {
 	dp := make([]int, amount+1)
-	dp[0] = 0 // base case
 	for i := 1; i < amount+1; i++ {
 		dp[i] = amount + 1 // 初始化给一个极大值
 	}
 	for target := 1; target < len(dp); target++ {
 		for _, coin := range coins {
 			if coin <= target {
-				// dp[target - coin] + 1(*coin)
 				dp[target] = Min(dp[target], 1+dp[target-coin])
 			}
 		}
